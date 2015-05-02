@@ -22,7 +22,7 @@ window.addEventListener('deviceorientation', function(event) {
     gammaFloor = Math.floor(gamma),
     boxEl = document.getElementById('rotate');
 
-  document.getElementById('orientation').innerHTML = '&beta; (front-back): ' + beta + ', &gamma; (left-right): ' + gamma;
+  document.getElementById('orientation').innerHTML = '&alpha; (direction): ' + alpha + '&beta; (front-back): ' + beta + ', &gamma; (left-right): ' + gamma;
   boxEl.style.webkitTransform ='rotate('+ gammaFloor +'deg) rotate3d(1,0,0, '+ betaFloor + 'deg)';
   boxEl.style.transform ='rotate('+ gammaFloor +'deg) rotate3d(1,0,0, '+ betaFloor + 'deg)';
 });

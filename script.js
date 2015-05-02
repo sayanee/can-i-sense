@@ -16,13 +16,14 @@ navigator.geolocation.getCurrentPosition(function(position) {
 
 // device orientation
 window.addEventListener('deviceorientation', function(event) {
-  var beta = event.beta.toFixed(2), // front-back
-    betaFloor = Math.abs(90 - Math.floor(beta)),
-    gamma = event.gamma.toFixed(2), // left-right
-    gammaFloor = Math.floor(gamma),
-    boxEl = document.getElementById('rotate');
+  var beta = event.beta.toFixed(2); // front-back
+  var betaFloor = Math.abs(90 - Math.floor(beta)),
+  var gamma = event.gamma.toFixed(2); // left-right
+  var gammaFloor = Math.floor(gamma);
+  var boxEl = document.getElementById('rotate');
+  var alpha = event.alpha.toFixed(2);
 
-  document.getElementById('orientation').innerHTML = '&alpha; (direction): ' + alpha + '&beta; (front-back): ' + beta + ', &gamma; (left-right): ' + gamma;
+  document.getElementById('orientation').innerHTML = 'alpha (direction): ' + alpha + ' &beta; (front-back): ' + beta + ', &gamma; (left-right): ' + gamma;
   boxEl.style.webkitTransform ='rotate('+ gammaFloor +'deg) rotate3d(1,0,0, '+ betaFloor + 'deg)';
   boxEl.style.transform ='rotate('+ gammaFloor +'deg) rotate3d(1,0,0, '+ betaFloor + 'deg)';
 });
